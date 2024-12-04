@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(Image/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  transition: background-color 0.5s;
+}
+
+#start,
+#pickDifficulty,
+#pickPlayer,
+#chooseStarter,
+#game {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+  color: white;
+  font-size: 1.2em;
+}
+
+button {
+  margin: 10px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button#x {
+  background-color: red;
+}
+
+button#o {
+  background-color: green;
+}
+
+button[onclick*="setGameMode('computer')"] {
+  background-color: lightblue;
+}
+
+button[onclick*="setGameMode('player')"] {
+  background-color: orange;
+}
+
+button[onclick*="setDifficulty('easy')"] {
+  background-color: lightgreen;
+}
+
+button[onclick*="setDifficulty('hard')"] {
+  background-color: darkred;
+}
+
+button[onclick*="startGame('X')"] {
+  background-color: red;
+}
+
+button[onclick*="startGame('O')"] {
+  background-color: green;
+}
+
+button[onclick*="startGame(Math.random() < 0.5 ? 'X' : 'O')"] {
+  background-color: purple;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.cell.x {
+  color: red;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
+}
+
+.cell.o {
+  color: green;
+  text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.6);
+}
+
+#turn {
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px #000000;
+}
